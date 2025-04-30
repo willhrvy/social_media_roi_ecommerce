@@ -22,7 +22,7 @@ instagram_grouped = instagram_df.groupby('date').agg(
 instagram_grouped['Instagram Post?'] = 'Yes'
 
 # Process Sessions
-sessions_path = os.path.join(raw_dir, 'Sessions_by_refferer_decive_type_and_day.csv')
+sessions_path = os.path.join(raw_dir, 'sessions_by_refferer_decive_type_and_day.csv')
 try:
     sessions_df = pd.read_csv(sessions_path)
 except FileNotFoundError:
@@ -33,7 +33,7 @@ sessions_df['Day'] = pd.to_datetime(sessions_df['Day'])
 sessions_grouped = sessions_df.groupby('Day')['Sessions'].sum().reset_index().rename(columns={'Day': 'Date'})
 
 # Process Net Sales
-sales_path = os.path.join(raw_dir, 'Total_sales_over_time.csv')
+sales_path = os.path.join(raw_dir, 'total_sales_over_time.csv')
 try:
     sales_df = pd.read_csv(sales_path)
 except FileNotFoundError:
