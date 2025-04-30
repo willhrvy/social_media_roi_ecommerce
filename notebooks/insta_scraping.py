@@ -3,6 +3,7 @@ import asyncio
 from datetime import datetime
 from scrapfly import ScrapeConfig, ScrapflyClient
 
+#Add Scrapfy Key and user agent
 SCRAPFLY = ScrapflyClient(key="scp-live-f7277159c7144b2785af67e458d579da")
 BASE_CONFIG = {
     "asp": True,

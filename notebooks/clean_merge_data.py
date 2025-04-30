@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 # Define file paths
-base_dir = 'data'  # Adjusted to reflect current working directory
+base_dir = 'data' 
 raw_dir = os.path.join(base_dir, 'raw')
 processed_dir = os.path.join(base_dir, 'processed')
 
@@ -21,8 +21,8 @@ instagram_grouped = instagram_df.groupby('date').agg(
 ).reset_index()
 instagram_grouped['Instagram Post?'] = 'Yes'
 
-# Process Sessions (fixed typo in the file name)
-sessions_path = os.path.join(raw_dir, 'Sessions_by_refferer_decive_type_and_day.csv')  # Updated filename
+# Process Sessions
+sessions_path = os.path.join(raw_dir, 'Sessions_by_refferer_decive_type_and_day.csv')
 try:
     sessions_df = pd.read_csv(sessions_path)
 except FileNotFoundError:
@@ -32,7 +32,7 @@ except FileNotFoundError:
 sessions_df['Day'] = pd.to_datetime(sessions_df['Day'])
 sessions_grouped = sessions_df.groupby('Day')['Sessions'].sum().reset_index().rename(columns={'Day': 'Date'})
 
-# Process Net Sales (from Total sales over time file)
+# Process Net Sales
 sales_path = os.path.join(raw_dir, 'Total_sales_over_time.csv')
 try:
     sales_df = pd.read_csv(sales_path)
@@ -56,7 +56,7 @@ master_df['Instagram Post?'] = master_df['Instagram Post?'].fillna('No')
 for col in ['Sessions', 'Net Sales', 'Likes', 'Comments']:
     master_df[col] = master_df[col].fillna(0)
 
-# Format Net Sales as Currency (Optional)
+# Format Net Sales as Currency
 master_df['Net Sales'] = master_df['Net Sales'].apply(lambda x: f'£{x:.2f}')
 
 # Save Results

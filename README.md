@@ -16,18 +16,29 @@ The second part of my research is to find areas that my business can find a comp
 ### Prerequisites
 - Python 3.8+
 - Required Python packages (install via `pip install -r requirements.txt`):
+
+scrapfly-sdk>=0.8.23
+
 pandas>=1.5.0
+
 numpy>=1.24.0
+
 matplotlib>=3.7.0
+
 beautifulsoup4>=4.12.0
+
 requests>=2.28.0
-scrapfly-sdk>=1.7.0
+
+jupyter>=1.0.0
+
+nbconvert>=7.0.0
 
 
 ### Execution Order
  
  1. run notebooks/insta_scraping.py 
- (This requires a valid Scrapfly API key; you can use their free trial https://scrapfly.io/ .)
+ (This requires a valid Scrapfly API key, please make your own account and insert your key in Line 7 to replace mine - mine won't work; you can use their free trial https://scrapfly.io/ ).
+ I used Scfraply's "How to scrape Instagram in 2025" blog to learn how to write this code. (Ališauskas, 2025)
 
  2. run python notebooks/clean_merge_data.py
  Processes raw data from Shopify, Instagram, and Klaviyo into data/processed/master_data.csv.
@@ -122,3 +133,7 @@ This repository is structured as follows:
     ├── sales_by_recent_posts.png
     
 ├── README.md
+
+## Link to final blog post containing full analysis and insights
+
+https://functional-impulse-7c7.notion.site/From-Posts-to-Profits-How-Social-Content-and-Trustpilot-Reviews-Shape-Performance-Across-Brands-1d98ece032558017b81ef6d7ec135195
