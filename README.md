@@ -1,8 +1,7 @@
-# social_media_roi_ecommerce
+# Social Media Ecommerce ROI
 ## Investigating the impact of social media marketing on e-commerce performance and what industry competitors' reviews tell us about their performance.
 
 ## Motivation
-Motivate your research question or business problem. Clearly explain which problem is solved.
 
 With marketing budgets under increasing scrutiny, understanding the return on investment (ROI) from social media campaigns is vital for e-commerce businesses. This project aims to quantify the impact of consistent posting on Instagram on online store performance.
 
@@ -43,9 +42,7 @@ Saves to respective CSV files in data/raw/
 
 5. Review Analysis:
 Run notebooks/reviews_analysis.ipynb to:
-
 Performs sentiment analysis on competitor reviews
-
 Generates word frequency visualizations
 
 
@@ -77,27 +74,51 @@ Strategic Takeaway: The main opportunity lies in owning the space of consistency
 This repository is structured as follows:
 
 ├── gitignore
+
     ├── .gitignore
+
 ├── data
+
     ├── processed
+
         ├── master_data.csv
+
     ├──raw
+
         ├── instagram_posts.csv
+
         ├── klavyio_report.csv
+
         ├── sessions_by_refferer_device_type_and_day.csv
+
         ├── total_sales_over_time.csv
+
         ├── trustpilot_reviews_abask.csv
+
         ├── trustpilot_reviews_mrsalice.csv
+
         ├── trustpilot_reviews_rebecca_udall.csv
+
 ├── notebooks
+
     ├── clean_merge_data.py
+
     ├── insta_scraping.py
+
     ├── plot_session_sales.ipynb
+
     ├── reviews_analysis.ipynb
+
     ├── trust_pilot_scrapers.ipynb
+
 └── visuals
+
     ├── avg_sales_post_days_vs_non_post_days.png
+
     ├── negative_word_use_reviews.png
+
     ├── positive_word_use_reviews.png
+
     ├── sales_by_recent_posts.png
+    
 ├── README.md
